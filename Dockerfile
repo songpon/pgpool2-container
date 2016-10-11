@@ -37,6 +37,7 @@ ADD conf/pgpool.conf.template /usr/share/pgpool2/pgpool.conf.template
 
 # Start the container.
 COPY docker-entrypoint.sh /
+RUN chmod +x /docker-entrypoint.sh
 ENTRYPOINT ["/docker-entrypoint.sh"]
 
 EXPOSE 9999 9898
