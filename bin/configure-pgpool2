@@ -51,8 +51,3 @@ if __name__ == "__main__":
 	pgpool = templates.get_template('pgpool.conf.template') \
 										.render(configuration)
 	write(pgpool, '/etc/pgpool2/pgpool.conf')
-	# Start the container.
-	try:
-		run('pgpool', '-n', '-f', '/etc/pgpool2/pgpool.conf', '-F', '/etc/pgpool2/pcp.conf')
-	except KeyboardInterrupt:
-		print 'Exiting...'
