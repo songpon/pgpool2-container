@@ -19,7 +19,7 @@ RUN apk --update --no-cache add libpq=${PG_VERSION} postgresql-dev=${PG_VERSION}
                 --sysconfdir=/etc \
                 --mandir=/usr/share/man \
                 --infodir=/usr/share/info && \
-    make -j8 && \
+    make && \
     make install && \
     rm -rf /tmp/pgpool-II-${PGPOOL_VERSION} && \
     apk del postgresql-dev linux-headers gcc make libgcc g++

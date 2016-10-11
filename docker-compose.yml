@@ -1,0 +1,13 @@
+version: '2'
+services:
+  mypostgres:
+    image: postgres
+
+  pgpool2:
+    image: manuc66/pgpool2-container-alpine:latest
+    depends_on: 
+      - mypostgres
+    environment:
+      - PGPOOL_BACKENDS=1:mypostgres:5432
+    ports:
+      - 5432:5432/tcp
