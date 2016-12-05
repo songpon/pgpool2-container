@@ -2,7 +2,7 @@
 
 FROM hegand/alpine:edge
 
-ENV PGPOOL_VERSION 3.5.4
+ENV PGPOOL_VERSION 3.6.0
 
 ENV PG_VERSION 9.6.0-r1
 
