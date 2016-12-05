@@ -12,7 +12,25 @@ It relies on [Alpine Linux](https://alpinelinux.org/) - [Edge](https://wiki.alpi
 
 ### Running the Container
 
+#### Stand alone command line
 ```sudo docker run --name pgpool2 -e PGPOOL_BACKENDS=1:127.0.0.1:5432,2:127.0.0.1:5433 -p 5432:5432/tcp manuc66/pgpool2-container-alpine:latest```
+
+#### With docker-compose
+```
+version: '2'
+services:
+  mypostgres:
+    image: postgres
+
+  pgpool2:
+    image: manuc66/pgpool2-container-alpine:latest
+    depends_on: 
+      - mypostgres
+    environment:
+      - PGPOOL_BACKENDS=1:mypostgres:5432
+    ports:
+      - 5432:5432/tcp
+```
 
 ### Configuration Environment Variables
 
