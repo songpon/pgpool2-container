@@ -17,10 +17,10 @@ It relies on [Alpine Linux](https://alpinelinux.org/) - [Edge](https://wiki.alpi
 
 #### With docker-compose
 ```
-version: '2'
+version: '3'
 services:
   mypostgres:
-    image: postgres
+    image: postgres:9.6-alpine
 
   pgpool2:
     image: manuc66/pgpool2-container-alpine:latest
