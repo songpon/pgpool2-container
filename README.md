@@ -3,6 +3,13 @@ Pgpool2 Dockerfile
 
 This project can be used to deploy pgpool2 inside a Docker container for transparent failover between two postgresql hosts without requiring a floating IP address.
 
+It relies on [Alpine Linux](https://alpinelinux.org/) - [Edge](https://wiki.alpinelinux.org/wiki/Edge).
+
+### Current versions
+- [Pgpool-II](http://www.pgpool.net): `3.6.0` ([release notes](http://www.pgpool.net/docs/latest/en/html/release-3-6.html))
+- [libpq](https://pkgs.alpinelinux.org/package/edge/main/x86/libpq): `9.6.0-r1`
+- [postgresql-client](https://pkgs.alpinelinux.org/package/edge/main/x86/postgresql-client): `9.6.0-r1`
+
 ### Running the Container
 
 ```sudo docker run --name pgpool2 -e PGPOOL_BACKENDS=1:127.0.0.1:5432,2:127.0.0.1:5433 -p 5432:5432/tcp manuc66/pgpool2-container-alpine:latest```
