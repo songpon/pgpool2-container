@@ -5,7 +5,11 @@ This project can be used to deploy pgpool2 inside a Docker container for transpa
 
 It relies on [Alpine Linux](https://alpinelinux.org/) - [Edge](https://wiki.alpinelinux.org/wiki/Edge).
 
-### Current versions
+### Tags and respective Dockerfile links
+- [`3.6.0`, `latest` (master/Dockerfile)](https://github.com/manuc66/pgpool2-container/blob/master/Dockerfile)
+- [`3.5.4` (3.5.4/Dockerfile)](https://github.com/manuc66/pgpool2-container/blob/3.5.4/Dockerfile)
+
+### Current versions (latest)
 - [Pgpool-II](http://www.pgpool.net): `3.6.0` ([release notes](http://www.pgpool.net/docs/latest/en/html/release-3-6.html))
 - [libpq](https://pkgs.alpinelinux.org/package/edge/main/x86/libpq): `9.6.0-r1`
 - [postgresql-client](https://pkgs.alpinelinux.org/package/edge/main/x86/postgresql-client): `9.6.0-r1`
