@@ -10,9 +10,10 @@ It relies on [Alpine Linux](https://alpinelinux.org/) - [Edge](https://wiki.alpi
 - [`3.5.4` (3.5.4/Dockerfile)](https://github.com/manuc66/pgpool2-container/blob/3.5.4/Dockerfile)
 
 ### Current versions (latest)
-- [Pgpool-II](http://www.pgpool.net): `3.6.0` ([release notes](http://www.pgpool.net/docs/latest/en/html/release-3-6.html))
-- [libpq](https://pkgs.alpinelinux.org/package/edge/main/x86/libpq): `9.6.0-r1`
-- [postgresql-client](https://pkgs.alpinelinux.org/package/edge/main/x86/postgresql-client): `9.6.0-r1`
+- `Alpine 3.5` : ([release notes](https://www.alpinelinux.org/posts/Alpine-3.5.0-released.html))
+- [Pgpool-II](http://www.pgpool.net): `3.6.1` ([release notes](http://www.pgpool.net/docs/latest/en/html/release-3-6.html))
+- [libpq](https://pkgs.alpinelinux.org/package/v3.5/main/x86/libpq): `9.6.1-r0`
+- [postgresql-client](https://pkgs.alpinelinux.org/package/v3.5/main/x86/postgresql-client): `9.6.1-r0`
 
 ### Running the Container
 

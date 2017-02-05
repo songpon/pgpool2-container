@@ -1,10 +1,10 @@
 # Pgpool2.
 
-FROM hegand/alpine:edge
+FROM alpine:3.5
 
-ENV PGPOOL_VERSION 3.6.0
+ENV PGPOOL_VERSION 3.6.1
 
-ENV PG_VERSION 9.6.0-r1
+ENV PG_VERSION 9.6.1-r0
 
 ENV LANG en_US.utf8
     
