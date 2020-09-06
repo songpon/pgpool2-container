@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 
 from jinja2 import Environment, FileSystemLoader
 from subprocess import check_call
@@ -16,8 +16,9 @@ def pgpool_get_configuration():
 	configuration.update({ 'pcp_user': value })
 	# Get the PCP user password.
 	value = os.getenv('PCP_USER_PASSWORD', 'bettervoice')
+	print('value', value)
 	hash = hashlib.md5()
-	hash.update(value)
+	hash.update(value.encode('utf-8'))
 	configuration.update({ 'pcp_user_password': hash.hexdigest() })
 	# Get the port pgpool should listen on.
 	value = os.getenv('PGPOOL_PORT', 5432)
@@ -35,19 +36,20 @@ def run(app, *args):
 	check_call([app] + list(args))
 
 def write(template, path):
-	with open(path, "wb") as output:
-		output.write(template)
+	output = open(path, "w")
+	output.write(template)
 
 if __name__ == "__main__":
 	# Initialize Jinja2
-	loader = FileSystemLoader('/usr/share/pgpool2')
+	loader = FileSystemLoader('/tmp')
 	templates = Environment(loader = loader)
 	# Load the configuration into a dictionary.
 	configuration = pgpool_get_configuration()
 	# Write PCP user credentials.
+
 	pcp = templates.get_template('pcp.conf.template') \
 								 .render(configuration)
-	write(pcp, '/etc/pgpool2/pcp.conf')
+	write(pcp, '/etc/pgpool/pcp.conf')
 	pgpool = templates.get_template('pgpool.conf.template') \
 										.render(configuration)
-	write(pgpool, '/etc/pgpool2/pgpool.conf')
+	write(pgpool, '/etc/pgpool/pgpool.conf')

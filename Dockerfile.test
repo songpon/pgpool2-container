@@ -1,0 +1,12 @@
+# Pgpool2.
+
+FROM alpine:edge
+
+ENV PGPOOL_VERSION 4.1.3-r0
+
+# ENV PG_VERSION 9.6.1-r0
+
+ENV LANG en_US.utf8
+
+RUN apk add --no-cache pgpool py3-jinja2
+    

@@ -1,0 +1,19 @@
+version: '3'
+services:
+  # mypostgres:
+  #   image: postgres:9.6-alpine
+
+  pgpool2:
+    image: do/pgpool2-alpine:latest
+    # depends_on: 
+    #   - mypostgres
+    environment:
+      - PGPOOL_BACKENDS=1:pgmaster:5432,2:pgslave:5432
+    ports:
+      - 5432:5432/tcp
+    networks:
+      - pg_cluster
+      
+networks:
+  pg_cluster:
+    external: true
